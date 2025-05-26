@@ -17,4 +17,12 @@ router.get('/status', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date() });
 });
 
+describe('GET /api/services', () => {
+  it('should return a list of services', async () => {
+    const res = await request(app).get('/api/services');
+    expect(res.statusCode).toBe(200);
+    expect(Array.isArray(res.body)).toBe(true);
+  });
+});
+
 module.exports = router;

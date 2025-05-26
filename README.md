@@ -11,3 +11,5 @@ Application Node.js simple pour lister des services CloudNinja.
 ```bash
 npm install
 node server.js
+
+![Tests](https://github.com/matuidi1234/cloudninja-app/actions/workflows/ci.yaml/badge.svg)
