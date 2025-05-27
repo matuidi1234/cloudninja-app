@@ -20,4 +20,13 @@ router.get("/status", (req, res) => {
   res.json({ status: "ok", timestamp: new Date() });
 });
 
+/**
+ * GET /api/items
+ * Récupère la liste des items
+ * @returns {Array} Liste des items
+ */
+app.get('/api/items', (req, res) => {
+  // code...
+});
+
 module.exports = router;
