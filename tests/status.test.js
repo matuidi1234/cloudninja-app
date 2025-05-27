@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../src/app'); // fichier principal
+const app = require('../src/app');
 
 describe('GET /api/status', () => {
   it('should return status 200 and app status', async () => {

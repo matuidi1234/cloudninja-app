@@ -9,11 +9,13 @@ const services = [
 
 // GET /api/services
 router.get('/services', (req, res) => {
+  console.log('GET /api/services');
   res.json(services);
 });
 
 // GET /api/status
 router.get('/status', (req, res) => {
+  console.log('GET /api/status');
   res.json({ status: 'ok', timestamp: new Date() });
 });
 
