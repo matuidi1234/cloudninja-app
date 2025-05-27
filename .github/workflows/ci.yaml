@@ -19,17 +19,12 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Show Node and npm versions
-        run: |
-          node -v
-          npm -v
-
       - name: Install dependencies
         run: npm install
-      
-      - name: Vérifier la présence de jest
-        run: npx jest --version
-      
+
+      - name: Fix jest permissions
+        run: chmod +x node_modules/.bin/jest
+
       - name: Run tests
         run: npm test
 
