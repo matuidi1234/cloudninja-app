@@ -1,0 +1,6 @@
+# Forcing CRLF on these files
+package-lock.json text eol=crlf
+*.js text eol=crlf
+
+# Ignore node_modules from any processing
+node_modules/* -text
