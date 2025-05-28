@@ -25,8 +25,8 @@ router.get("/status", (req, res) => {
  * Récupère la liste des items
  * @returns {Array} Liste des items
  */
-app.get('/api/items', (req, res) => {
-  // code...
+router.get("/api/items", (req, res) => {
+  res.json(["item1", "item2"]);
 });
 
 module.exports = router;

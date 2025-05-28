@@ -2,12 +2,11 @@
   "name": "cloudninja-app",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "lint": "eslint .",
-    "doc": "jsdoc -c jsdoc.json"
+    "doc": "jsdoc -c jsdoc.json",
+    "start": "node index.js"
   },
-  
   "keywords": [],
   "author": "",
   "license": "ISC",
