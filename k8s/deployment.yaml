@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudninja-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cloudninja
+  template:
+    metadata:
+      labels:
+        app: cloudninja
+    spec:
+    containers:
+        - name: cloudninja-app
+          image: ghcr.io/matuidi1234/cloudninja:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: cloudninja-config
+                  key: NODE_ENV
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: cloudninja-secret
+                  key: SECRET_KEY
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 5
